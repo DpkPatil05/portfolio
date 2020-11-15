@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-const Navbar = (props.) => {
+const Navbar = (props) => {
     return(
         <nav className="navbar">
             <ul className="navbar-nav">
-                { props.children }
+            { props.children }
             </ul>
         </nav>
-    );
+    )
 }
 
-export default Navbar;
+export default Navbar
