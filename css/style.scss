@@ -1,0 +1,17 @@
+html{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+.navbar {
+    .navbar-brand {
+        flex: auto;
+        margin-left: 1em;
+    }
+    ul{
+        li {
+          list-style: none;
+          margin: 1.1em 1em 0 1em;
+        }
+    }
+}
