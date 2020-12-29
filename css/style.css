@@ -4,7 +4,7 @@ html {
 
 body {
   margin: 0;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .navbar .navbar-brand {
@@ -26,7 +26,7 @@ body {
 }
 
 .section-container .main-container {
-  margin-top: 5.7em;
+  max-height: 10vh !important;
   display: flex;
 }
 
@@ -35,11 +35,7 @@ body {
 }
 
 .section-container .main-container .left-section .left-heading {
-  margin-top: 13vh;
-}
-
-.section-container .main-container .left-section .left-heading img {
-  z-index: 1;
+  margin-top: 15vh;
 }
 
 .section-container .main-container .left-section .left-heading .underline {
@@ -47,7 +43,7 @@ body {
   width: 12.5em;
   display: block;
   margin-top: -3vh;
-  margin-left: 5.5vw;
+  margin-left: 6.7vw;
   border-radius: 25px;
   border: blue 2px solid;
   z-index: 2;
@@ -70,6 +66,42 @@ body {
 
 .section-container .main-container .right-section {
   flex: 2;
-  background-color: #4062bb;
-  background-image: linear-gradient(316deg, #4062bb 0%, #5200ae 74%);
+  background-image: url("/assets/background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.section-container .main-container .right-section .left-box {
+  margin-top: 5.25vh;
+  margin-bottom: -0.58em;
+  max-height: 100vh;
+  z-index: 1;
+}
+
+.section-container .main-container .right-section .top-right-blob,
+.section-container .main-container .right-section .top-left-blob,
+.section-container .main-container .right-section .bottom-right-blob,
+.section-container .main-container .right-section .bottom-left-blob {
+  position: fixed;
+  z-index: 2;
+}
+
+.section-container .main-container .right-section .top-right-blob {
+  top: 1em;
+  right: -10rem;
+}
+
+.section-container .main-container .right-section .top-left-blob {
+  top: 7em;
+  margin-left: 4em;
+}
+
+.section-container .main-container .right-section .bottom-right-blob {
+  bottom: 10em;
+  right: 15em;
+}
+
+.section-container .main-container .right-section .bottom-left-blob {
+  bottom: -9em;
+  margin-left: 14em;
 }
