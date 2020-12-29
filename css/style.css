@@ -1,6 +1,10 @@
 html {
   scroll-behavior: smooth;
-  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  overflow-y: hidden;
 }
 
 .navbar .navbar-brand {
@@ -19,7 +23,6 @@ html {
 
 .section-container {
   max-width: 100vw;
-  height: 30vh;
 }
 
 .section-container .main-container {
@@ -28,17 +31,41 @@ html {
 }
 
 .section-container .main-container .left-section {
-  flex: 1;
+  flex: 1.15;
 }
 
 .section-container .main-container .left-section .left-heading {
-  position: relative;
-  margin-top: 20vh;
-  margin-left: 4.5vw;
+  margin-top: 13vh;
 }
 
 .section-container .main-container .left-section .left-heading img {
-  width: 23vw;
+  z-index: 1;
+}
+
+.section-container .main-container .left-section .left-heading .underline {
+  height: 0.9em;
+  width: 12.5em;
+  display: block;
+  margin-top: -3vh;
+  margin-left: 5.5vw;
+  border-radius: 25px;
+  border: blue 2px solid;
+  z-index: 2;
+}
+
+.section-container .main-container .left-section .left-heading .underline-2 {
+  margin-top: 2em;
+  margin-left: 15.4em;
+  z-index: 1;
+}
+
+.section-container .main-container .left-section .sub-text .sub-txt-2 {
+  margin-left: -1.6em;
+}
+
+.section-container .main-container .left-section .sub-text .box-text {
+  position: absolute;
+  margin-left: -18.3em;
 }
 
 .section-container .main-container .right-section {
