@@ -22,6 +22,10 @@ body {
   margin: 1.18em 1em 0 1em;
 }
 
+.mixBlnd {
+  background-blend-mode: screen;
+}
+
 .section-container {
   max-width: 100vw;
 }
@@ -68,7 +72,9 @@ body {
 .section-container .main-container .right-section {
   flex: 2.5;
   background-image: url("/assets/background.svg");
+  background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .section-container .main-container .right-section .left-box {
@@ -79,15 +85,20 @@ body {
 }
 
 .section-container .main-container .right-section .floating-icons {
-  position: relative;
+  position: absolute;
   margin-left: 0;
+  top: 5vh;
 }
 
 .section-container .main-container .right-section .top-right-blob,
 .section-container .main-container .right-section .top-left-blob,
 .section-container .main-container .right-section .bottom-right-blob,
 .section-container .main-container .right-section .bottom-left-blob,
-.section-container .main-container .right-section .my-pic,
+.section-container .main-container .right-section .my-pic {
+  position: fixed;
+  z-index: 2;
+}
+
 .section-container .main-container .right-section .connecting-line,
 .section-container .main-container .right-section .laptop,
 .section-container .main-container .right-section .vs-code,
@@ -97,7 +108,7 @@ body {
 .section-container .main-container .right-section .bs-4,
 .section-container .main-container .right-section .js,
 .section-container .main-container .right-section .php {
-  position: fixed;
+  position: relative;
   z-index: 2;
 }
 
@@ -121,6 +132,7 @@ body {
 .section-container .main-container .right-section .bottom-left-blob {
   bottom: -9em;
   margin-left: 14em;
+  z-index: 0;
 }
 
 .section-container .main-container .right-section .my-pic {
@@ -132,7 +144,7 @@ body {
 
 .section-container .main-container .right-section .connecting-line {
   top: 25.5vh;
-  margin-left: 10vw;
+  margin-left: 8vw;
   height: 31.5vw;
 }
 
