@@ -1,7 +1,8 @@
 html{ scroll-behavior: smooth; }
 
 body { 
-    margin: 0; 
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
@@ -23,7 +24,7 @@ body {
         max-height: 10vh !important;
         display: flex;
         .left-section { 
-            flex: 1.15; 
+            flex: 1; 
             .left-heading {
                 margin-top: 15vh;
                 .underline {
@@ -31,14 +32,14 @@ body {
                     width: 12.5em;
                     display: block;
                     margin-top: -3vh;
-                    margin-left: 6.7vw;
+                    margin-left: 2.8vw;
                     border-radius: 25px;
                     border: blue 2px solid;
                     z-index: 2;
                 }
                 .underline-2 { 
                     margin-top: 2em;
-                    margin-left: 15.4em;
+                    margin-left: 12.8em;
                     z-index: 1;
                  }
             }
@@ -51,38 +52,96 @@ body {
              }
         }
         .right-section { 
-            flex: 2; 
+            flex: 2.5; 
             background-image: url("/assets/background.svg");
             background-repeat: no-repeat;
-            background-position: center;
             .left-box {
                 margin-top: 5.25vh;
                 margin-bottom: -0.58em;
                 max-height: 100vh;
                 z-index: 1;
             }
+            .floating-icons{
+                position: relative;
+                margin-left: 0;
+            }
             .top-right-blob, 
             .top-left-blob, 
             .bottom-right-blob,
-            .bottom-left-blob {
+            .bottom-left-blob,
+            .my-pic,
+            .connecting-line,
+            .laptop,
+            .vs-code,
+            .flutter,
+            .android-studio,
+            .css-3,
+            .bs-4,
+            .js,
+            .php {
                 position: fixed;
                 z-index: 2;
             }
             .top-right-blob {
-                top: 1em;
+                top: 2em;
                 right: -10rem;
+                height: 28vw;
             }
             .top-left-blob {
                 top: 7em;
                 margin-left: 4em;
             }
             .bottom-right-blob {
-                bottom: 10em;
-                right: 15em;
+                bottom: 6em;
+                left: 92em;
+                height: 11.5em;
             }
             .bottom-left-blob {
                 bottom: -9em;
                 margin-left: 14em;
+            }
+            .my-pic {
+                bottom: -41.5em;
+                left: 66.7vw;
+                right: 20vw;
+                height: 88em;
+            }
+            .connecting-line {
+                top: 25.5vh;
+                margin-left: 10vw;
+                height: 31.5vw;
+            }
+            .laptop {
+                top: 20vh;
+                margin-left: 6vw;
+            }
+            .vs-code {
+                top: 18.5vh;
+                margin-left: 18vw;
+            }
+            .flutter {
+                top: 23.5vh;
+                margin-left: 30vw;
+            }
+            .android-studio {
+                top: 38vh;
+                margin-left: 36.5vw;
+            }
+            .css-3 {
+                top: 71vh;
+                margin-left: 28vw;
+            }
+            .bs-4 {
+                top: 71vh;
+                margin-left: 17.6vw;
+            }
+            .js {
+                top: 63.6vh;
+                margin-left: 11vw;
+            }
+            .php {
+                top: 48vh;
+                margin-left: 7.5vw;
             }
         }
     }
