@@ -22,11 +22,10 @@ body {
 
 .section-container {
     max-width: 100vw;
-    .main-container { 
-        max-height: 10vh !important;
+    .main-container {
         display: flex;
         .left-section { 
-            flex: 1; 
+            flex: 1;
             .left-heading {
                 margin-top: 15vh;
                 .underline {
@@ -54,7 +53,7 @@ body {
              }
         }
         .right-section { 
-            flex: 2.5; 
+            flex: 2; 
             background-image: url("/assets/background.svg");
             background-size: cover;
             background-repeat: no-repeat;

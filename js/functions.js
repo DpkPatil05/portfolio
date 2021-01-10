@@ -2,4 +2,68 @@
 let scene = document.getElementById('scene');
 let parallax = new Parallax(scene);
 
+let loadedCount = 0;
+
+function showData(filename, containerName, reverseScroll) {
+    let directory = '/'+filename;
+
+    $(containerName).remove();
+
+    $.get(directory, function(data){ 
+        $(data)
+        .hide()
+        .appendTo('.section-container')
+        .slideToggle('slow');
+        // $("#loadingAnimation1").hide();
+        if(!reverseScroll){
+            $('.section-container')
+            .animate({ scrollTop: $(containerName).offset() }, 1000);
+        } else {
+            $('.section-container')
+            .animate({ scrollBottom: $(containerName).offset() }, 1000);
+        }
+    });
+}
+
 // Page switch //
+$('window, body, object').on( 'mousewheel', function () {
+    $('window, body, object').one( 'mousewheel', function ( event ) {
+        if( event.originalEvent.detail > 0 || 
+            event.originalEvent.wheelDelta < 0) { 
+            //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+            //scroll down
+            if(loadedCount == 0) {
+                // $("#loadingAnimation1").show();
+                showData("works.html", "#indexContainer", false);
+                loadedCount++;
+                console.log(loadedCount);
+                return;
+            } 
+            if(loadedCount == 1) {
+                showData("about-me.html", "#worksContainer", false);
+                loadedCount++;
+                console.log(loadedCount);
+                return;
+            }
+        } else {
+            //scroll up
+            if (loadedCount <= 0) {
+                loadedCount = 0;
+                console.log(loadedCount);
+                return;
+            }
+            if(loadedCount == 1) {
+                showData("index-load.html", "#worksContainer", true);
+                loadedCount--;
+                console.log(loadedCount);
+                return;
+            }
+            if(loadedCount == 2) {
+                showData("works.html", "#aboutContainer", true);
+                loadedCount--;
+                console.log(loadedCount);
+                return;
+            }
+        }
+    });
+});
