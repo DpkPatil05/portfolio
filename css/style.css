@@ -35,11 +35,15 @@ body {
 }
 
 .section-container .main-container .left-section {
-  flex: 1;
+  flex: 1.1;
 }
 
 .section-container .main-container .left-section .left-heading {
-  margin-top: 15vh;
+  margin-top: 19vh;
+}
+
+.section-container .main-container .left-section .left-heading .name {
+  height: 6.7vw;
 }
 
 .section-container .main-container .left-section .left-heading .underline {
@@ -47,7 +51,7 @@ body {
   width: 12.5em;
   display: block;
   margin-top: -3vh;
-  margin-left: 2.8vw;
+  margin-left: 4vw;
   border-radius: 25px;
   border: blue 2px solid;
   z-index: 2;
@@ -55,17 +59,30 @@ body {
 
 .section-container .main-container .left-section .left-heading .underline-2 {
   margin-top: 2em;
-  margin-left: 12.8em;
+  margin-left: 11em;
   z-index: 1;
 }
 
+.section-container .main-container .left-section .sub-text {
+  margin-top: 10vh;
+}
+
+.section-container .main-container .left-section .sub-text .sub-txt-2, .section-container .main-container .left-section .sub-text .sub-txt-1 {
+  height: 5.1vw;
+}
+
 .section-container .main-container .left-section .sub-text .sub-txt-2 {
-  margin-left: -1.6em;
+  margin-left: -1.8vw;
+}
+
+.section-container .main-container .left-section .sub-text .bg-blue-box {
+  height: 5.5vw;
 }
 
 .section-container .main-container .left-section .sub-text .box-text {
   position: absolute;
   margin-left: -18.3em;
+  height: 6vw;
 }
 
 .section-container .main-container .right-section {
@@ -117,71 +134,81 @@ body {
 }
 
 .section-container .main-container .right-section .top-left-blob {
-  top: 7em;
+  top: 6.5em;
   margin-left: 4em;
+  height: 8vw;
 }
 
 .section-container .main-container .right-section .bottom-right-blob {
-  bottom: 6em;
-  left: 92em;
-  height: 11.5em;
+  bottom: 2.5em;
+  left: 66em;
+  height: 10em;
 }
 
 .section-container .main-container .right-section .bottom-left-blob {
-  bottom: -9em;
+  bottom: -10.5em;
   margin-left: 14em;
   z-index: 0;
+  height: 18vw;
 }
 
 .section-container .main-container .right-section .my-pic {
-  bottom: -41.5em;
+  bottom: -35em;
   left: 66.7vw;
-  right: 20vw;
-  height: 88em;
+  right: 22vw;
+  height: 70em;
 }
 
 .section-container .main-container .right-section .connecting-line {
-  top: 25.5vh;
-  margin-left: 8vw;
-  height: 31.5vw;
+  top: 25vh;
+  margin-left: 4vw;
+  height: 30vw;
 }
 
 .section-container .main-container .right-section .laptop {
   top: 20vh;
-  margin-left: 6vw;
+  margin-left: 4vw;
+  height: 30vw;
 }
 
 .section-container .main-container .right-section .vs-code {
-  top: 18.5vh;
-  margin-left: 18vw;
+  top: 16vh;
+  margin-left: 15vw;
+  height: 12vw;
 }
 
 .section-container .main-container .right-section .flutter {
-  top: 23.5vh;
-  margin-left: 30vw;
+  top: 21vh;
+  margin-left: 29vw;
+  height: 10vw;
 }
 
 .section-container .main-container .right-section .android-studio {
-  top: 38vh;
-  margin-left: 36.5vw;
+  top: 42vh;
+  margin-left: 34vw;
+  height: 8.5vw;
 }
 
 .section-container .main-container .right-section .css-3 {
   top: 71vh;
-  margin-left: 28vw;
+  margin-left: 27vw;
+  height: 4.5vw;
 }
 
 .section-container .main-container .right-section .bs-4 {
   top: 71vh;
-  margin-left: 17.6vw;
+  margin-left: 18.5vw;
+  height: 6vw;
 }
 
 .section-container .main-container .right-section .js {
-  top: 63.6vh;
-  margin-left: 11vw;
+  top: 64vh;
+  margin-left: 11.5vw;
+  height: 6.5vw;
 }
 
 .section-container .main-container .right-section .php {
-  top: 48vh;
-  margin-left: 7.5vw;
+  top: 47vh;
+  margin-left: 7vw;
+  height: 7vw;
 }

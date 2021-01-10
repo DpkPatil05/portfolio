@@ -25,32 +25,44 @@ body {
     .main-container {
         display: flex;
         .left-section { 
-            flex: 1;
+            flex: 1.1;
             .left-heading {
-                margin-top: 15vh;
+                margin-top: 19vh;
+                .name{
+                    height: 6.7vw;
+                }
                 .underline {
                     height: 0.9em;
                     width: 12.5em;
                     display: block;
                     margin-top: -3vh;
-                    margin-left: 2.8vw;
+                    margin-left: 4vw;
                     border-radius: 25px;
                     border: blue 2px solid;
                     z-index: 2;
                 }
                 .underline-2 { 
                     margin-top: 2em;
-                    margin-left: 12.8em;
+                    margin-left: 11em;
                     z-index: 1;
                  }
             }
-             .sub-text{
-                 .sub-txt-2 { margin-left: -1.6em; }
-                 .box-text {
-                     position: absolute;
-                     margin-left: -18.3em;
-                 }
-             }
+            .sub-text{
+                margin-top: 10vh;
+                .sub-txt-2, .sub-txt-1 {height: 5.1vw; }
+                .sub-txt-2{
+                    margin-left: -1.8vw;
+                }
+                .bg-blue-box{
+                    height: 5.5vw;
+                }
+                .box-text {
+                    position: absolute;
+                    margin-left: -18.3em;
+                    height: 6vw;
+                    
+                }
+            }
         }
         .right-section { 
             flex: 2; 
@@ -76,6 +88,7 @@ body {
                 position: fixed;
                 z-index: 2;
             }
+
             .connecting-line,
             .laptop,
             .vs-code,
@@ -86,69 +99,81 @@ body {
             .js,
             .php {
                 position: relative;
-                z-index: 2;
+                z-index: 2;    
             }
+
             .top-right-blob {
                 top: 2em;
                 right: -10rem;
                 height: 28vw;
             }
             .top-left-blob {
-                top: 7em;
+                top: 6.5em;
                 margin-left: 4em;
+                height: 8vw;
             }
             .bottom-right-blob {
-                bottom: 6em;
-                left: 92em;
-                height: 11.5em;
+                bottom: 2.5em;
+                left: 66em;
+                height: 10em;
             }
             .bottom-left-blob {
-                bottom: -9em;
+                bottom: -10.5em;
                 margin-left: 14em;
                 z-index: 0;
+                height: 18vw;
             }
             .my-pic {
-                bottom: -41.5em;
+                bottom: -35em;
                 left: 66.7vw;
-                right: 20vw;
-                height: 88em;
+                right: 22vw;
+                height: 70em;
             }
             .connecting-line {
-                top: 25.5vh;
-                margin-left: 8vw;
-                height: 31.5vw;
+                top: 25vh;
+                margin-left: 4vw;
+                height: 30vw;
             }
             .laptop {
                 top: 20vh;
-                margin-left: 6vw;
+                margin-left: 4vw;
+                height: 30vw;
+                
             }
             .vs-code {
-                top: 18.5vh;
-                margin-left: 18vw;
+                top: 16vh;
+                margin-left: 15vw;
+                height: 12vw;
             }
             .flutter {
-                top: 23.5vh;
-                margin-left: 30vw;
+                top: 21vh;
+                margin-left: 29vw;
+                height: 10vw;
             }
             .android-studio {
-                top: 38vh;
-                margin-left: 36.5vw;
+                top: 42vh;
+                margin-left: 34vw;
+                height: 8.5vw;
             }
             .css-3 {
                 top: 71vh;
-                margin-left: 28vw;
+                margin-left: 27vw;
+                height: 4.5vw;
             }
             .bs-4 {
                 top: 71vh;
-                margin-left: 17.6vw;
+                margin-left: 18.5vw;
+                height: 6vw;
             }
             .js {
-                top: 63.6vh;
-                margin-left: 11vw;
+                top: 64vh;
+                margin-left: 11.5vw;
+                height: 6.5vw;
             }
             .php {
-                top: 48vh;
-                margin-left: 7.5vw;
+                top: 47vh;
+                margin-left: 7vw;
+                height: 7vw;
             }
         }
     }
