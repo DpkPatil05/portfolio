@@ -48,7 +48,7 @@ body {
 
 .section-container .main-container .left-section .left-heading .underline {
   height: 0.9em;
-  width: 12.5em;
+  width: 12.5vw;
   display: block;
   margin-top: -3vh;
   margin-left: 4vw;
@@ -59,7 +59,7 @@ body {
 
 .section-container .main-container .left-section .left-heading .underline-2 {
   margin-top: 2em;
-  margin-left: 11em;
+  margin-left: 13vw;
   z-index: 1;
 }
 
@@ -76,13 +76,7 @@ body {
 }
 
 .section-container .main-container .left-section .sub-text .bg-blue-box {
-  height: 5.5vw;
-}
-
-.section-container .main-container .left-section .sub-text .box-text {
-  position: absolute;
-  margin-left: -18.3em;
-  height: 6vw;
+  height: 4.7vw;
 }
 
 .section-container .main-container .right-section {
@@ -140,9 +134,9 @@ body {
 }
 
 .section-container .main-container .right-section .bottom-right-blob {
-  bottom: 2.5em;
-  left: 66em;
+  bottom: 11vh;
   height: 10em;
+  left: 78vw;
 }
 
 .section-container .main-container .right-section .bottom-left-blob {
@@ -153,10 +147,9 @@ body {
 }
 
 .section-container .main-container .right-section .my-pic {
-  bottom: -35em;
-  left: 66.7vw;
-  right: 22vw;
-  height: 70em;
+  top: 15rem;
+  height: 87rem;
+  left: 67.5vw;
 }
 
 .section-container .main-container .right-section .connecting-line {

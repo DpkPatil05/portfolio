@@ -33,7 +33,7 @@ body {
                 }
                 .underline {
                     height: 0.9em;
-                    width: 12.5em;
+                    width: 12.5vw;
                     display: block;
                     margin-top: -3vh;
                     margin-left: 4vw;
@@ -43,7 +43,7 @@ body {
                 }
                 .underline-2 { 
                     margin-top: 2em;
-                    margin-left: 11em;
+                    margin-left: 13vw;
                     z-index: 1;
                  }
             }
@@ -54,13 +54,7 @@ body {
                     margin-left: -1.8vw;
                 }
                 .bg-blue-box{
-                    height: 5.5vw;
-                }
-                .box-text {
-                    position: absolute;
-                    margin-left: -18.3em;
-                    height: 6vw;
-                    
+                    height: 4.7vw;
                 }
             }
         }
@@ -113,9 +107,9 @@ body {
                 height: 8vw;
             }
             .bottom-right-blob {
-                bottom: 2.5em;
-                left: 66em;
+                bottom: 11vh;
                 height: 10em;
+                left: 78vw;
             }
             .bottom-left-blob {
                 bottom: -10.5em;
@@ -124,10 +118,9 @@ body {
                 height: 18vw;
             }
             .my-pic {
-                bottom: -35em;
-                left: 66.7vw;
-                right: 22vw;
-                height: 70em;
+                top: 15rem;
+                height: 87rem;
+                left: 67.5vw;
             }
             .connecting-line {
                 top: 25vh;
