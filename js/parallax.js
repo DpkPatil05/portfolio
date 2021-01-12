@@ -12,7 +12,7 @@
 
   // Constants
   var NAME = 'Parallax';
-  var MAGIC_NUMBER = 5;
+  var MAGIC_NUMBER = 2;
   var DEFAULTS = {
     relativeInput: false,
     clipRelativeInput: false,

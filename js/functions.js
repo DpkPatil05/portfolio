@@ -7,21 +7,23 @@ let loadedCount = 0;
 function showData(filename, containerName, reverseScroll) {
     let directory = '/'+filename;
 
-    $(containerName).remove();
+    $(containerName).fadeOut('fast', function(){
+        $(this).remove();
+    });
 
     $.get(directory, function(data){ 
-        $(data)
-        .hide()
-        .appendTo('.section-container')
-        .slideToggle('slow');
-        // $("#loadingAnimation1").hide();
         if(!reverseScroll){
-            $('.section-container')
-            .animate({ scrollTop: $(containerName).offset() }, 1000);
+            // $('.section-container')
+            // .animate({ scrollTop: $(containerName).offset() }, 1000);
+            $(data).slideUp('normal', function() {
+                $(data).appendTo('.section-container');
+            });
         } else {
-            $('.section-container')
-            .animate({ scrollBottom: $(containerName).offset() }, 1000);
+            $(data).slideDown('normal', function() {
+                $(data).appendTo('.section-container');
+            });
         }
+        // $("#loadingAnimation1").hide();
     });
 }
 
@@ -36,32 +38,37 @@ $('window, body, object').on( 'mousewheel', function () {
                 // $("#loadingAnimation1").show();
                 showData("works.html", "#indexContainer", false);
                 loadedCount++;
-                console.log(loadedCount);
                 return;
             } 
             if(loadedCount == 1) {
                 showData("about-me.html", "#worksContainer", false);
                 loadedCount++;
-                console.log(loadedCount);
+                return;
+            }
+            if(loadedCount == 2) {
+                showData("contact-me.html", "#aboutContainer", false);
+                loadedCount++;
                 return;
             }
         } else {
             //scroll up
             if (loadedCount <= 0) {
                 loadedCount = 0;
-                console.log(loadedCount);
                 return;
             }
             if(loadedCount == 1) {
                 showData("index-load.html", "#worksContainer", true);
                 loadedCount--;
-                console.log(loadedCount);
                 return;
             }
             if(loadedCount == 2) {
                 showData("works.html", "#aboutContainer", true);
                 loadedCount--;
-                console.log(loadedCount);
+                return;
+            }
+            if(loadedCount == 3) {
+                showData("about-me.html", "#contactContainer", true);
+                loadedCount--;
                 return;
             }
         }
