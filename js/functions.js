@@ -34,12 +34,13 @@ function scrollToPage(containerName, loadedCount, reverseScroll) {
     let index = loadedCount+pageVal;
 
     $(containerName)
+    .addClass("hidden")
     .fadeOut('fast', function(){
         $(this).hide(); //hide old container
     });
 
-    console.log('Page count ' + index);
     $(loadedPages[index])
+    .removeClass("hidden")
     .fadeIn('fast', function(){ //show new container
         $(this).show();
     });
