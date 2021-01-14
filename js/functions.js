@@ -22,69 +22,68 @@ function loadPage(directory, containerName, reverseScroll) {
 
         if(!loadedPages.includes(containerName)) {
             loadedPages.push(containerName);
-            console.log('Loaded page ' + loadedPages[(loadedPages.indexOf(containerName))+1]);
         }
         // $("#loadingAnimation1").hide();
     });
     return;
 }
 
-function scrollToPage(containerName, reverseScroll) {
-    var pageVal = 0;
-    reverseScroll?pageVal=-1:pageVal=0;
+function scrollToPage(containerName, loadedCount, reverseScroll) {
+    let pageVal = 0;
+    reverseScroll?pageVal=-1:pageVal=1;
+    let index = loadedCount+pageVal;
+
     $(containerName)
     .fadeOut('fast', function(){
         $(this).hide(); //hide old container
     });
-    console.log("Coming from " + loadedPages[(loadedPages.indexOf(containerName))]);
-    $(loadedPages[(loadedPages.indexOf(containerName))]+pageVal)
+
+    console.log('Page count ' + index);
+    $(loadedPages[index])
     .fadeIn('fast', function(){ //show new container
         $(this).show();
     });
     return;
 }
 
-function showData(filename, containerName, reverseScroll) {
+function showData(filename, containerName, loadedCount, reverseScroll) {
     let directory = '/'+filename;
 
-    if (containerName == "#indexContainer" && firstLoad) {
+    if(containerName == "#indexContainer" && firstLoad) {
         loadPage(directory, containerName, reverseScroll);
-        scrollToPage(containerName, reverseScroll);
+        scrollToPage(containerName, loadedCount, reverseScroll);
         firstLoad != firstLoad;
     } else if(loadedPages.includes(containerName) && reverseScroll) {
-        scrollToPage(containerName, reverseScroll);
+        scrollToPage(containerName, loadedCount, reverseScroll);
     } else if(loadedPages.includes(containerName) && containerName != "#indexContainer"
      && !reverseScroll) {
-        scrollToPage(containerName, reverseScroll);
+        scrollToPage(containerName, loadedCount, reverseScroll);
     } else {
         loadPage(directory, containerName, reverseScroll);
-        scrollToPage(containerName, reverseScroll);
+        scrollToPage(containerName, loadedCount, reverseScroll);
     }
     return;
 }
 
-$('window, body, object').on( 'mousewheel', function () {
-    $('window, body, object').one( 'mousewheel', function ( event ) {
+$('window, body, object').on('mousewheel', function () {
+    $('window, body, object').one('mousewheel', function (event) {
         if( event.originalEvent.detail > 0 || 
             event.originalEvent.wheelDelta < 0) { 
             //alternative options for wheelData: wheelDeltaX & wheelDeltaY
             //scroll down
             if(loadedCount == 0) {
                 // $("#loadingAnimation1").show();
-                showData("works.html", "#indexContainer", false);
-                console.log('Loaded count ' + loadedCount);
+                showData("works.html", "#indexContainer", loadedCount, false);
                 loadedCount++;
                 return;
             } 
             if(loadedCount == 1) {
-                showData("about-me.html", "#worksContainer", false);
-                console.log('Loaded count ' + loadedCount);
+                showData("about-me.html", "#worksContainer", loadedCount, false);
                 loadedCount++;
                 return;
             }
             if(loadedCount == 2) {
-                showData("contact-me.html", "#aboutContainer", false);
-                console.log('Loaded count ' + loadedCount);
+                showData("contact-me.html", "#aboutContainer", loadedCount, false);
                 loadedCount++;
                 return;
             }
@@ -92,24 +91,20 @@ $('window, body, object').on( 'mousewheel', function () {
             //scroll up
             if (loadedCount <= 0) {
                 loadedCount = 0;
-                console.log('Loaded count ' + loadedCount);
                 return;
             }
             if(loadedCount == 1) {
-                showData("index-load.html", "#worksContainer", true);
-                console.log('Loaded count ' + loadedCount);
+                showData("index-load.html", "#worksContainer", loadedCount, true);
                 loadedCount--;
                 return;
             }
             if(loadedCount == 2) {
-                showData("works.html", "#aboutContainer", true);
-                console.log('Loaded count ' + loadedCount);
+                showData("works.html", "#aboutContainer", loadedCount, true);
                 loadedCount--;
                 return;
             }
             if(loadedCount == 3) {
-                showData("about-me.html", "#contactContainer", true);
-                console.log('Loaded count ' + loadedCount);
+                showData("about-me.html", "#contactContainer", loadedCount, true);
                 loadedCount--;
                 return;
             }
