@@ -210,11 +210,105 @@ body {
   height: 7vw;
 }
 
-.page-transition {
-  transition: .4s;
-  opacity: 1;
+.section-container .main-container .right-section .items ul {
+  list-style: none;
+  position: absolute;
+  margin-left: 0;
+  top: 5vh;
 }
 
-html.is-animating .page-transition {
-  opacity: 0;
+.section-container .main-container .right-section .email-pic,
+.section-container .main-container .right-section .email-text,
+.section-container .main-container .right-section .email-line,
+.section-container .main-container .right-section .phone-pic,
+.section-container .main-container .right-section .number1,
+.section-container .main-container .right-section .number2,
+.section-container .main-container .right-section .facebook,
+.section-container .main-container .right-section .insta,
+.section-container .main-container .right-section .twitter,
+.section-container .main-container .right-section .linkedin,
+.section-container .main-container .right-section .CV_btn {
+  position: relative;
+  z-index: 2;
+}
+
+.section-container .main-container .right-section .email-pic {
+  height: 8vw;
+  margin-left: 3vw;
+  top: 25vh;
+}
+
+.section-container .main-container .right-section .email-text {
+  top: 12vh;
+  margin-left: 10.5vw;
+  color: whitesmoke;
+}
+
+.section-container .main-container .right-section .email-line {
+  height: 0.9em;
+  width: 18vw;
+  display: block;
+  top: 12vh;
+  margin-left: 10.4vw;
+  border-radius: 25px;
+  border: black 1px solid;
+  z-index: 2;
+}
+
+.section-container .main-container .right-section .phone-pic {
+  height: 8vw;
+  top: 16vh;
+  margin-left: 10.5vw;
+}
+
+.section-container .main-container .right-section .number1 {
+  top: 2vh;
+  margin-left: 14.5vw;
+  color: whitesmoke;
+}
+
+.section-container .main-container .right-section .number2 {
+  top: 1vh;
+  margin-left: 19vw;
+  color: whitesmoke;
+}
+
+.section-container .main-container .right-section .facebook {
+  height: 8vw;
+  top: 6vh;
+  margin-left: 18.3vw;
+}
+
+.section-container .main-container .right-section .insta {
+  height: 9.8vw;
+  top: -12.5vh;
+  margin-left: 25vw;
+}
+
+.section-container .main-container .right-section .twitter {
+  height: 7.4vw;
+  top: -30.5vh;
+  margin-left: 34vw;
+}
+
+.section-container .main-container .right-section .linkedin {
+  height: 9.4vw;
+  top: -47.8vh;
+  margin-left: 41vw;
+}
+
+.section-container .main-container .right-section .CV_btn {
+  top: -23vw;
+  margin-left: 35vw;
+}
+
+.section-container .main-container .right-section .btn-funky-moon {
+  background: #A770EF;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(145deg, #FDB99B, #CF8BF3, #A770EF);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(145deg, #FDB99B, #CF8BF3, #A770EF);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: black;
+  border: 3px solid #eee;
 }

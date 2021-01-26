@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450.5" height="621.5" viewBox="0 0 450.5 621.5">
+  <g id="circles" transform="translate(123.5 488.5)">
+    <circle id="small-pink-circle" cx="100" cy="100" r="100" transform="translate(-56 -444)" fill="#fbcdc8"/>
+    <ellipse id="white-ring-circle" cx="119" cy="121.5" rx="119" ry="121.5" transform="translate(-122 -487)" fill="none" stroke="#f7f9fd" stroke-width="3"/>
+    <ellipse id="big-pink-circle" cx="191.5" cy="188.5" rx="191.5" ry="188.5" transform="translate(-56 -244)" fill="#fef3f2"/>
+  </g>
+</svg>
