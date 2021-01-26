@@ -173,3 +173,12 @@ body {
         }
     }
 }
+
+.page-transition {
+    transition: .4s;
+    opacity: 1;
+}
+
+html.is-animating .page-transition {
+    opacity: 0;
+}
