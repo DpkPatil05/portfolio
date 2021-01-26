@@ -181,4 +181,5 @@ body {
 
 html.is-animating .page-transition {
     opacity: 0;
+    transform: translateY(-100px);
 }
