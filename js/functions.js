@@ -3,6 +3,10 @@ let scene = document.getElementById('scene');
 let parallax = new Parallax(scene);
 // Parallax //
 
+// Swup //
+const swup = new Swup();
+// Swup //
+
 // Page switch //
 let loadedCount = 0;
 let loadedPages = ['#indexContainer'];
@@ -122,3 +126,4 @@ $('window, body, object').on('mousewheel', function () {
         }
     });
 });
+// Page switch //
