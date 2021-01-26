@@ -4,7 +4,7 @@ let parallax = new Parallax(scene);
 // Parallax //
 
 // Swup //
-const swup = new Swup();
+// const swup = new Swup();
 // Swup //
 
 // Page switch //
