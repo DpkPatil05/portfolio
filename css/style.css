@@ -35,15 +35,11 @@ body {
 }
 
 .section-container .main-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .section-container .main-container .left-section {
-  -webkit-box-flex: 1.1;
-      -ms-flex: 1.1;
-          flex: 1.1;
+  flex: 1.1;
 }
 
 .section-container .main-container .left-section .left-heading {
@@ -88,9 +84,7 @@ body {
 }
 
 .section-container .main-container .right-section {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  flex: 2;
   background-image: url("/assets/background.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -234,99 +228,99 @@ body {
 .section-container .main-container .right-section .twitter,
 .section-container .main-container .right-section .linkedin,
 .section-container .main-container .right-section .CV_btn {
-  position: relative;
+  position: fixed;
   z-index: 2;
 }
 
 .section-container .main-container .right-section .email-pic {
-  height: 8vw;
-  margin-left: 3vw;
-  top: 25vh;
+  height: 8rem;
+  margin-left: 3rem;
+  top: 13rem;
 }
 
 .section-container .main-container .right-section .email-text {
-  top: 12vh;
-  margin-left: 10.5vw;
+  top: 15rem;
+  margin-left: 10.5rem;
   color: whitesmoke;
 }
 
 .section-container .main-container .right-section .email-line {
   height: 0.9em;
-  width: 18vw;
+  width: 17.5rem;
   display: block;
-  top: 12vh;
-  margin-left: 10.4vw;
+  top: 18rem;
+  margin-left: 10.4rem;
   border-radius: 25px;
   border: black 1px solid;
-  z-index: 2;
 }
 
 .section-container .main-container .right-section .phone-pic {
-  height: 8vw;
-  top: 16vh;
-  margin-left: 10.5vw;
+  height: 8rem;
+  top: 21rem;
+  margin-left: 10.5rem;
 }
 
 .section-container .main-container .right-section .number1 {
-  top: 2vh;
-  margin-left: 14.5vw;
+  top: 22.5rem;
+  margin-left: 14.5rem;
   color: whitesmoke;
 }
 
 .section-container .main-container .right-section .number2 {
-  top: 1vh;
-  margin-left: 19vw;
+  top: 25rem;
+  margin-left: 19rem;
   color: whitesmoke;
 }
 
 .section-container .main-container .right-section .facebook {
-  height: 8vw;
-  top: 6vh;
-  margin-left: 18.3vw;
+  height: 6rem;
+  top: 29rem;
+  margin-left: 18.3rem;
 }
 
 .section-container .main-container .right-section .insta {
-  height: 9.8vw;
-  top: -12.5vh;
-  margin-left: 25vw;
+  height: 7rem;
+  top: 28.5rem;
+  margin-left: 23.5rem;
 }
 
 .section-container .main-container .right-section .twitter {
-  height: 7.4vw;
-  top: -30.5vh;
-  margin-left: 34vw;
+  height: 5.3rem;
+  top: 29.3rem;
+  margin-left: 30rem;
 }
 
 .section-container .main-container .right-section .linkedin {
-  height: 9.4vw;
-  top: -47.8vh;
-  margin-left: 41vw;
+  height: 7rem;
+  top: 28.5rem;
+  margin-left: 35.2rem;
 }
 
 .section-container .main-container .right-section .CV_btn {
-  top: -23vw;
-  margin-left: 35vw;
+  height: 3rem;
+  width: 12rem;
+  top: 37rem;
+  margin-left: 30rem;
 }
 
 .section-container .main-container .right-section .btn-funky-moon {
   background: #A770EF;
   /* fallback for old browsers */
+  background: -webkit-linear-gradient(145deg, #FDB99B, #CF8BF3, #A770EF);
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(145deg, #FDB99B, #CF8BF3, #A770EF);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: black;
   border: 3px solid #eee;
+  font-weight: bold;
 }
 
 .page-transition {
-  -webkit-transition: .4s;
   transition: .4s;
   opacity: 1;
 }
 
 html.is-animating .page-transition {
   opacity: 0;
-  -webkit-transform: translateY(-100px);
-          transform: translateY(-100px);
+  transform: translateY(-100px);
 }
-/*# sourceMappingURL=style.css.map */
