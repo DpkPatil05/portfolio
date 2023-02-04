@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/common/constants.dart';
+
+import '../../../common/ui/default_appbar.dart';
+import 'landing_page_body.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({
@@ -12,18 +16,13 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('AppBar'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Constants.colors.primary,
+        body: const CustomScrollView(
+          slivers: <Widget>[
+            DefaultAppBar(),
+            LandingPageBody(),
           ],
         ),
       ),
