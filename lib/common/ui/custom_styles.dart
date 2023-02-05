@@ -19,4 +19,21 @@ class CustomStyles {
         fontSize: Constants.numbers.defaultHeaderFontSize,
         fontWeight: FontWeight.w800,
       );
+
+  static BoxDecoration defaultBackgroundGradient(bool? isReversed) =>
+      BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: (isReversed ?? false)
+              ? <Color>[
+                  Constants.colors.primary,
+                  Constants.colors.secondary,
+                ]
+              : <Color>[
+                  Constants.colors.secondary,
+                  Constants.colors.primary,
+                ],
+        ),
+      );
 }

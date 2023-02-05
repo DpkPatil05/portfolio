@@ -9,12 +9,19 @@ abstract class Constants {
 
 /// Used for defining all number constants
 class NumberConstants {
+  final int mod2 = 2;
+  final int remainder0 = 0;
   final int maxPagesCount = 3;
 
+  final double space1 = 1.0;
   final double space2 = 2.0;
+  final double space3 = 3.0;
+  final double space4 = 4.0;
   final double space5 = 5.0;
   final double space8 = 8.0;
   final double space16 = 16.0;
+  final double space20 = 20.0;
+  final double space24 = 24.0;
   final double space50 = 50.0;
   final double space75 = 75.0;
 
@@ -23,6 +30,7 @@ class NumberConstants {
   final double defaultElevation = 1.0;
 
   final double appBarExpandedHeight = 200.0;
+  final double baseHeightAdjustment = 0.79;
 }
 
 /// Used for defining all string constants
