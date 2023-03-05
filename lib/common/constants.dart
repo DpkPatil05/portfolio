@@ -18,10 +18,14 @@ class NumberConstants {
   final double space3 = 3.0;
   final double space4 = 4.0;
   final double space5 = 5.0;
+  final double space6 = 6.0;
   final double space8 = 8.0;
   final double space16 = 16.0;
   final double space20 = 20.0;
   final double space24 = 24.0;
+  final double space36 = 36.0;
+  final double space42 = 42.0;
+  final double space48 = 48.0;
   final double space50 = 50.0;
   final double space75 = 75.0;
 

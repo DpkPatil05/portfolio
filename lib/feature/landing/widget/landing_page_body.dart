@@ -51,9 +51,7 @@ class _LandingPageBodyState extends State<LandingPageBody> {
                       pageNumber: currentPage.index,
                       children: <Widget>[
                         Row(
-                          children: const <Widget>[
-                            Text('Test'),
-                          ],
+                          children: const <Widget>[],
                         ),
                       ],
                     ),
@@ -61,9 +59,7 @@ class _LandingPageBodyState extends State<LandingPageBody> {
                       pageNumber: currentPage.index,
                       children: <Widget>[
                         Row(
-                          children: const <Widget>[
-                            Text('Test'),
-                          ],
+                          children: const <Widget>[],
                         ),
                       ],
                     ),
@@ -71,9 +67,7 @@ class _LandingPageBodyState extends State<LandingPageBody> {
                       pageNumber: currentPage.index,
                       children: <Widget>[
                         Row(
-                          children: const <Widget>[
-                            Text('Test'),
-                          ],
+                          children: const <Widget>[],
                         ),
                       ],
                     ),

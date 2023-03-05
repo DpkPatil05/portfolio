@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'custom_styles.dart';
 
-class SelectableIconTextButton extends StatelessWidget {
-  const SelectableIconTextButton({
+class IconTextButton extends StatelessWidget {
+  const IconTextButton({
     super.key,
     required this.icon,
-    required this.isSelected,
-    required this.onPressed,
+    required this.text,
+    this.onPressed,
+    this.isSelected = false,
   });
 
-  final String icon;
-  final bool? isSelected;
+  final Icon icon;
+  final String text;
   final void Function()? onPressed;
+  final bool? isSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -22,22 +24,15 @@ class SelectableIconTextButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          // TODO (Deepak): Need to change icons with sag's
-          (isSelected ?? false)
-              ? Icon(
-                  Icons.home,
-                  color: Constants.colors.tertiary,
-                )
-              : Icon(
-                  Icons.home_outlined,
-                  color: Constants.colors.tertiary,
-                ),
+          icon,
           SizedBox(
-            width: Constants.numbers.space8,
+            width: Constants.numbers.space6,
           ),
           Text(
-            Constants.strings.contact,
-            style: CustomStyles.defaultTextStyle(),
+            text,
+            style: isSelected ?? false
+                ? CustomStyles.defaultHeaderStyle()
+                : CustomStyles.defaultTextStyle(),
           ),
         ],
       ),

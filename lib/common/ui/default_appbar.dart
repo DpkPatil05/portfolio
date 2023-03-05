@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio/common/ui/custom_styles.dart';
 import 'package:portfolio/common/ui/selectable_icon_text_button.dart';
 
 import '../../feature/landing/bloc/landing_page_bloc.dart';
@@ -44,19 +45,46 @@ class DefaultAppBar extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
-                        SelectableIconTextButton(
-                          icon: '',
+                        IconTextButton(
+                          icon: currentPage == Pages.homePage
+                              ? CustomStyles.defaultIcon(
+                                  iconData: Icons.home,
+                                  isSelected: currentPage == Pages.homePage,
+                                )
+                              : CustomStyles.defaultIcon(
+                                  iconData: Icons.home_outlined,
+                                  isSelected: currentPage == Pages.homePage,
+                                ),
                           isSelected: currentPage == Pages.homePage,
+                          text: Constants.strings.home,
                           onPressed: () => bloc.page = Pages.homePage,
                         ),
-                        SelectableIconTextButton(
-                          icon: '',
+                        IconTextButton(
+                          icon: currentPage == Pages.aboutPage
+                              ? CustomStyles.defaultIcon(
+                                  iconData: Icons.info_rounded,
+                                  isSelected: currentPage == Pages.aboutPage,
+                                )
+                              : CustomStyles.defaultIcon(
+                                  iconData: Icons.info_outline_rounded,
+                                  isSelected: currentPage == Pages.aboutPage,
+                                ),
                           isSelected: currentPage == Pages.aboutPage,
+                          text: Constants.strings.about,
                           onPressed: () => bloc.page = Pages.aboutPage,
                         ),
-                        SelectableIconTextButton(
-                          icon: '',
+                        IconTextButton(
+                          icon: currentPage == Pages.contactPage
+                              ? CustomStyles.defaultIcon(
+                                  iconData: Icons.phone,
+                                  isSelected: currentPage == Pages.contactPage,
+                                )
+                              : CustomStyles.defaultIcon(
+                                  iconData: Icons.phone_outlined,
+                                  isSelected: currentPage == Pages.contactPage,
+                                ),
                           isSelected: currentPage == Pages.contactPage,
+                          text: Constants.strings.contact,
                           onPressed: () => bloc.page = Pages.contactPage,
                         ),
                         const SizedBox.shrink(),

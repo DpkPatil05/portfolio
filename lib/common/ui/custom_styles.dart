@@ -45,4 +45,16 @@ class CustomStyles {
                 ],
         ),
       );
+
+  static Icon defaultIcon({
+    required IconData iconData,
+    bool? isSelected = false,
+  }) =>
+      Icon(
+        iconData,
+        color: (isSelected ?? false)
+            ? Constants.colors.primary
+            : Constants.colors.tertiary,
+        size: (isSelected ?? false) ? Constants.numbers.space36 : null,
+      );
 }
