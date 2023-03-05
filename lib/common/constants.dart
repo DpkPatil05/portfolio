@@ -26,6 +26,7 @@ class NumberConstants {
   final double space75 = 75.0;
 
   final double defaultFontSize = 18.0;
+  final double defaultFontSizeSmall = 14.0;
   final double defaultHeaderFontSize = 24.0;
   final double defaultElevation = 1.0;
 
@@ -37,6 +38,9 @@ class NumberConstants {
 class StringConstants {
   final String portfolio = 'Portfolio';
   final String deepakPatil = 'Deepak Patil';
+  final String home = 'Home';
+  final String about = 'About';
+  final String contact = 'Contact';
 }
 
 /// Used for defining all image paths

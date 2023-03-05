@@ -30,7 +30,6 @@ class _LandingPageBodyState extends State<LandingPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height;
     return SliverToBoxAdapter(
       child: StreamBuilder<LandingPageState?>(
           stream: _bloc.screenState,
@@ -49,19 +48,34 @@ class _LandingPageBodyState extends State<LandingPageBody> {
                       _bloc.page = Pages.values[index],
                   pages: <Widget>[
                     DefaultGradientBody(
-                      height: height,
                       pageNumber: currentPage.index,
-                      children: [],
+                      children: <Widget>[
+                        Row(
+                          children: const <Widget>[
+                            Text('Test'),
+                          ],
+                        ),
+                      ],
                     ),
                     DefaultGradientBody(
-                      height: height,
                       pageNumber: currentPage.index,
-                      children: [],
+                      children: <Widget>[
+                        Row(
+                          children: const <Widget>[
+                            Text('Test'),
+                          ],
+                        ),
+                      ],
                     ),
                     DefaultGradientBody(
-                      height: height,
                       pageNumber: currentPage.index,
-                      children: [],
+                      children: <Widget>[
+                        Row(
+                          children: const <Widget>[
+                            Text('Test'),
+                          ],
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -72,21 +86,23 @@ class _LandingPageBodyState extends State<LandingPageBody> {
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: AnimatedSmoothIndicator(
-                      axisDirection: Axis.vertical,
-                      activeIndex: currentPage.index,
-                      count: Constants.numbers.maxPagesCount,
-                      effect: WormEffect(
-                        activeDotColor: Constants.colors.secondary,
-                        dotColor: Constants.colors.tertiary,
-                        dotHeight: Constants.numbers.space16,
-                        dotWidth: Constants.numbers.space16,
-                        spacing: Constants.numbers.space20,
-                        strokeWidth: Constants.numbers.space2,
-                        paintStyle: PaintingStyle.stroke,
-                      ),
-                      onDotClicked: (int index) =>
-                          _liquidController.animateToPage(page: index),
-                    ),
+                        axisDirection: Axis.vertical,
+                        activeIndex: currentPage.index,
+                        count: Constants.numbers.maxPagesCount,
+                        effect: WormEffect(
+                          activeDotColor: Constants.colors.secondary,
+                          dotColor: Constants.colors.tertiary,
+                          dotHeight: Constants.numbers.space16,
+                          dotWidth: Constants.numbers.space16,
+                          spacing: Constants.numbers.space20,
+                          strokeWidth: Constants.numbers.space2,
+                          paintStyle: PaintingStyle.stroke,
+                        ),
+                        onDotClicked: (int index) {
+                          setState(() {
+                            _liquidController.animateToPage(page: index);
+                          });
+                        }),
                   ),
                 ),
               ],

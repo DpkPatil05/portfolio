@@ -10,6 +10,15 @@ class CustomStyles {
             ? Constants.colors.darkText
             : Constants.colors.lightText,
         fontSize: Constants.numbers.defaultFontSize,
+        fontWeight: FontWeight.w500,
+      );
+
+  static TextStyle defaultTextStyleSmall({bool? isDarkText}) => TextStyle(
+        color: (isDarkText ?? false)
+            ? Constants.colors.darkText
+            : Constants.colors.lightText,
+        fontSize: Constants.numbers.defaultFontSizeSmall,
+        fontWeight: FontWeight.w400,
       );
 
   static TextStyle defaultHeaderStyle({bool? isDarkText}) => TextStyle(

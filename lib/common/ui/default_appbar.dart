@@ -22,17 +22,40 @@ class DefaultAppBar extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.bottomLeft,
               child: Padding(
-                padding: EdgeInsets.only(
-                  left: Constants.numbers.space75,
-                ),
-                child: Text(
-                  Constants.strings.portfolio,
-                  style: CustomStyles.defaultHeaderStyle(),
+                padding: EdgeInsets.only(bottom: Constants.numbers.space8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        Constants.strings.home,
+                        style: CustomStyles.defaultTextStyle(),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        Constants.strings.about,
+                        style: CustomStyles.defaultTextStyle(),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        Constants.strings.contact,
+                        style: CustomStyles.defaultTextStyle(),
+                      ),
+                    ),
+                    const SizedBox.shrink(),
+                    const SizedBox.shrink(),
+                    const SizedBox.shrink(),
+                  ],
                 ),
               ),
-            ),
+            )
           ],
         ),
       );

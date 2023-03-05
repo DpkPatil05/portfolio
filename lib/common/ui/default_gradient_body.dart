@@ -7,20 +7,25 @@ class DefaultGradientBody extends StatelessWidget {
   const DefaultGradientBody({
     super.key,
     this.height,
+    this.children,
     required this.pageNumber,
-    required this.children,
   });
 
   final double? height;
   final int pageNumber;
-  final List<Widget> children;
+  final List<Widget>? children;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? MediaQuery.of(context).size.height,
       decoration: CustomStyles.defaultBackgroundGradient(
         pageNumber % Constants.numbers.mod2 == Constants.numbers.remainder0,
+      ),
+      child: SizedBox(
+        height: height ?? MediaQuery.of(context).size.height,
+        child: Column(
+          children: children ?? <Widget>[],
+        ),
       ),
     );
   }
