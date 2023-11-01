@@ -9,13 +9,13 @@ class IconTextButton extends StatelessWidget {
     required this.icon,
     required this.text,
     this.onPressed,
-    this.isSelected = false,
+    this.isActive = false,
   });
 
   final Icon icon;
   final String text;
   final void Function()? onPressed;
-  final bool? isSelected;
+  final bool? isActive;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +25,10 @@ class IconTextButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           icon,
-          SizedBox(
-            width: Constants.numbers.space6,
-          ),
+          SizedBox(width: Constants.numbers.space6),
           Text(
             text,
-            style: isSelected ?? false
+            style: isActive ?? false
                 ? CustomStyles.defaultHeaderStyle()
                 : CustomStyles.defaultTextStyle(),
           ),

@@ -19,7 +19,8 @@ class DefaultGradientBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: CustomStyles.defaultBackgroundGradient(
-        pageNumber % Constants.numbers.mod2 == Constants.numbers.remainder0,
+        pageNumber % Constants.numbers.modTwo ==
+            Constants.numbers.remainderZero,
       ),
       child: SizedBox(
         height: height ?? MediaQuery.of(context).size.height,

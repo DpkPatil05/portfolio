@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:portfolio/common/constants.dart';
+import 'package:portfolio/feature/about/widget/about_page.dart';
+import 'package:portfolio/feature/contact/widget/contact_page.dart';
+import 'package:portfolio/feature/home/widget/home_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../../common/ui/default_gradient_body.dart';
-import '../../../models/landing_page_state.dart';
-import '../bloc/landing_page_bloc.dart';
+import '../../landing/bloc/landing_page_bloc.dart';
+import '../../landing/pages_descriptor.dart';
 
 class LandingPageBody extends StatefulWidget {
-  const LandingPageBody({Key? key}) : super(key: key);
+  const LandingPageBody({Key? key, required this.bloc}) : super(key: key);
+  final LandingPageBloc bloc;
 
   @override
   State<LandingPageBody> createState() => _LandingPageBodyState();
@@ -17,97 +20,56 @@ class LandingPageBody extends StatefulWidget {
 
 class _LandingPageBodyState extends State<LandingPageBody> {
   final LiquidController _liquidController = LiquidController();
-  late final LandingPageBloc _bloc;
-
-  @override
-  void initState() {
-    _bloc = BlocProvider.of<LandingPageBloc>(
-      context,
-      listen: false,
-    );
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: StreamBuilder<LandingPageState?>(
-          stream: _bloc.screenState,
-          builder: (context, snapshot) {
-            Pages currentPage = Pages.homePage;
-            if (snapshot.hasData && snapshot.data != null) {
-              currentPage = snapshot.data!.page;
-            }
-            return Stack(
-              alignment: Alignment.center,
-              children: <Widget>[
-                LiquidSwipe(
-                  enableLoop: true,
-                  liquidController: _liquidController,
-                  onPageChangeCallback: (int index) =>
-                      _bloc.page = Pages.values[index],
-                  pages: <Widget>[
-                    DefaultGradientBody(
-                      pageNumber: currentPage.index,
-                      children: <Widget>[
-                        Row(
-                          children: const <Widget>[],
-                        ),
-                      ],
-                    ),
-                    DefaultGradientBody(
-                      pageNumber: currentPage.index,
-                      children: <Widget>[
-                        Row(
-                          children: const <Widget>[],
-                        ),
-                      ],
-                    ),
-                    DefaultGradientBody(
-                      pageNumber: currentPage.index,
-                      children: <Widget>[
-                        Row(
-                          children: const <Widget>[],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: Constants.numbers.space50,
-                  ),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: AnimatedSmoothIndicator(
-                        axisDirection: Axis.vertical,
-                        activeIndex: currentPage.index,
-                        count: Constants.numbers.maxPagesCount,
-                        effect: WormEffect(
-                          activeDotColor: Constants.colors.secondary,
-                          dotColor: Constants.colors.tertiary,
-                          dotHeight: Constants.numbers.space16,
-                          dotWidth: Constants.numbers.space16,
-                          spacing: Constants.numbers.space20,
-                          strokeWidth: Constants.numbers.space2,
-                          paintStyle: PaintingStyle.stroke,
-                        ),
-                        onDotClicked: (int index) {
-                          setState(() {
-                            _liquidController.animateToPage(page: index);
-                          });
-                        }),
-                  ),
-                ),
-              ],
-            );
-          }),
+      child: BlocBuilder<LandingPageBloc, Pages>(
+        builder: (context, currentActiveItem) => Stack(
+          alignment: Alignment.center,
+          children: <Widget>[
+            _buildPageBody,
+            _buildPageIndicators(currentActiveItem),
+          ],
+        ),
+      ),
     );
   }
 
-  @override
-  void dispose() {
-    _bloc.dispose();
-    super.dispose();
-  }
+  LiquidSwipe get _buildPageBody => LiquidSwipe(
+        enableLoop: true,
+        liquidController: _liquidController,
+        onPageChangeCallback: (int index) =>
+            widget.bloc.onPageChange(Pages.values[index]),
+        pages: <Widget>[
+          HomePage(landingPageBloc: widget.bloc),
+          AboutPage(landingPageBloc: widget.bloc),
+          ContactPage(landingPageBloc: widget.bloc),
+        ],
+      );
+
+  Widget _buildPageIndicators(Pages page) => Padding(
+        padding: EdgeInsets.only(left: Constants.numbers.space50),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: AnimatedSmoothIndicator(
+            axisDirection: Axis.vertical,
+            activeIndex: page.index,
+            count: Pages.values.length,
+            effect: WormEffect(
+              activeDotColor: Constants.colors.secondary,
+              dotColor: Constants.colors.tertiary,
+              dotHeight: Constants.numbers.space16,
+              dotWidth: Constants.numbers.space16,
+              spacing: Constants.numbers.space20,
+              strokeWidth: Constants.numbers.space2,
+              paintStyle: PaintingStyle.stroke,
+            ),
+            onDotClicked: (int index) {
+              widget.bloc.onPageChange(Pages.values[index]);
+              _liquidController.animateToPage(page: index);
+            },
+          ),
+        ),
+      );
 }
