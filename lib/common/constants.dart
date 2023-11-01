@@ -9,9 +9,14 @@ abstract class Constants {
 
 /// Used for defining all number constants
 class NumberConstants {
-  final int mod2 = 2;
-  final int remainder0 = 0;
-  final int maxPagesCount = 3;
+  // Flex values
+  final int flexTwo = 2;
+  final int flexThree = 3;
+  final int flexFour = 4;
+  final int flexFive = 5;
+
+  final int modTwo = 2;
+  final int remainderZero = 0;
 
   final double space1 = 1.0;
   final double space2 = 2.0;
