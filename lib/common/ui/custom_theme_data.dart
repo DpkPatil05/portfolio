@@ -2,8 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-class CustomStyles {
-  CustomStyles._();
+class CustomThemeData {
+  CustomThemeData._();
+
+  static ThemeData get defaultTheme => ThemeData(
+        fontFamily: Constants.strings.fontPrompt,
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: Constants.colors.primary,
+          secondary: Constants.colors.secondary,
+          tertiary: Constants.colors.tertiary,
+        ),
+      );
 
   static TextStyle defaultTextStyle({bool? isDarkText}) => TextStyle(
         color: (isDarkText ?? false)
@@ -29,21 +39,24 @@ class CustomStyles {
         fontWeight: FontWeight.w800,
       );
 
-  static BoxDecoration defaultBackgroundGradient(bool? isReversed) =>
-      BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: (isReversed ?? false)
-              ? <Color>[
-                  Constants.colors.primary,
-                  Constants.colors.secondary,
-                ]
-              : <Color>[
-                  Constants.colors.secondary,
-                  Constants.colors.primary,
-                ],
-        ),
+  static TextStyle nameDisplayStyle({bool? isDarkText}) => TextStyle(
+        color: (isDarkText ?? false)
+            ? Constants.colors.darkText
+            : Constants.colors.lightText,
+        fontSize: Constants.numbers.nameDisplayFontSize,
+        fontWeight: FontWeight.w800,
+        fontFamily: Constants.strings.fontLeagueSpartan,
+        letterSpacing: Constants.numbers.space8,
+        shadows: [
+          Shadow(
+            color: Constants.colors.primary,
+            offset: Offset(
+              -Constants.numbers.space4,
+              -Constants.numbers.space1,
+            ),
+            blurRadius: Constants.numbers.space4,
+          ),
+        ],
       );
 
   static Icon defaultIcon({

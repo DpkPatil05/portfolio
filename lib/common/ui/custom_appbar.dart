@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:portfolio/common/ui/custom_styles.dart';
-import 'package:portfolio/common/ui/selectable_icon_text_button.dart';
+import 'package:portfolio/common/ui/custom_theme_data.dart';
+import 'package:portfolio/common/ui/text_icon_button.dart';
 
 import '../../feature/landing/bloc/landing_page_bloc.dart';
 import '../../feature/landing/pages_descriptor.dart';
@@ -61,8 +61,8 @@ class CustomAppBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            IconTextButton(
-              icon: CustomStyles.defaultIcon(
+            TextIconButton(
+              icon: CustomThemeData.defaultIcon(
                 iconData: _getIconForTextButton(
                     navbarItem: navbarItem,
                     currentActiveItem: currentActiveItem),

@@ -23,14 +23,20 @@ class _LandingPageBodyState extends State<LandingPageBody> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return SliverToBoxAdapter(
       child: BlocBuilder<LandingPageBloc, Pages>(
-        builder: (context, currentActiveItem) => Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            _buildPageBody,
-            _buildPageIndicators(currentActiveItem),
-          ],
+        builder: (context, currentActiveItem) => SizedBox(
+          height: height,
+          width: width,
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              _buildPageBody,
+              _buildPageIndicators(currentActiveItem),
+            ],
+          ),
         ),
       ),
     );
@@ -52,29 +58,37 @@ class _LandingPageBodyState extends State<LandingPageBody> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _liquidController.animateToPage(page: currentActiveItem.index);
     });
-    return Padding(
-      padding: EdgeInsets.only(left: Constants.numbers.space50),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: AnimatedSmoothIndicator(
-          axisDirection: Axis.vertical,
-          activeIndex: currentActiveItem.index,
-          count: Pages.values.length,
-          effect: WormEffect(
-            activeDotColor: Constants.colors.secondary,
-            dotColor: Constants.colors.tertiary,
-            dotHeight: Constants.numbers.space16,
-            dotWidth: Constants.numbers.space16,
-            spacing: Constants.numbers.space20,
-            strokeWidth: Constants.numbers.space2,
-            paintStyle: PaintingStyle.stroke,
+    return Column(
+      children: [
+        Expanded(
+          flex: Constants.numbers.flexFour,
+          child: Padding(
+            padding: EdgeInsets.only(left: Constants.numbers.space50),
+            child: Align(
+              alignment: Alignment.bottomLeft,
+              child: AnimatedSmoothIndicator(
+                axisDirection: Axis.vertical,
+                activeIndex: currentActiveItem.index,
+                count: Pages.values.length,
+                effect: WormEffect(
+                  activeDotColor: Constants.colors.primary,
+                  dotColor: Constants.colors.tertiary,
+                  dotHeight: Constants.numbers.space16,
+                  dotWidth: Constants.numbers.space16,
+                  spacing: Constants.numbers.space20,
+                  strokeWidth: Constants.numbers.space3,
+                  paintStyle: PaintingStyle.stroke,
+                ),
+                onDotClicked: (int index) {
+                  widget.bloc.onPageChange(Pages.values[index]);
+                  _liquidController.animateToPage(page: index);
+                },
+              ),
+            ),
           ),
-          onDotClicked: (int index) {
-            widget.bloc.onPageChange(Pages.values[index]);
-            _liquidController.animateToPage(page: index);
-          },
         ),
-      ),
+        const Spacer(),
+      ],
     );
   }
 }

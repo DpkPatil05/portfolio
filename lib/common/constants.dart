@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 abstract class Constants {
   static NumberConstants numbers = NumberConstants();
   static final StringConstants strings = StringConstants();
@@ -37,6 +39,7 @@ class NumberConstants {
   final double defaultFontSize = 18.0;
   final double defaultFontSizeSmall = 14.0;
   final double defaultHeaderFontSize = 24.0;
+  final double nameDisplayFontSize = 70.0;
   final double defaultElevation = 1.0;
 
   final double appBarExpandedHeight = 200.0;
@@ -45,11 +48,15 @@ class NumberConstants {
 
 /// Used for defining all string constants
 class StringConstants {
+  // Fonts
+  final String fontLeagueSpartan = 'LeagueSpartan';
+  final String fontPrompt = 'Prompt';
+
   final String portfolio = 'Portfolio';
   final String deepakPatil = 'Deepak Patil';
-  final String home = 'Home';
-  final String about = 'About';
-  final String contact = 'Contact';
+  final String home = 'home';
+  final String about = 'about';
+  final String contact = 'contact';
 }
 
 /// Used for defining all image paths
@@ -62,10 +69,11 @@ class ImageConstants {
 /// Used for defining all colour constants
 class ColorConstants {
   // Default color scheme for the app
-  final Color primary = const Color(0xff0543d8);
+  final Color primary = const Color(0xff2962ff);
   final Color secondary = const Color(0xffba000d);
   final Color tertiary = const Color(0xffffffff);
 
+  final Color backgroundColor = const Color(0xff181db8);
   final Color lightText = const Color(0xffffffff);
   final Color darkText = const Color(0xff0f0e0e);
 }

@@ -10,7 +10,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-
   flutter_bloc: 8.1.3
   go_router: 11.1.4
   liquid_swipe: 3.1.0
@@ -27,3 +26,10 @@ flutter:
   assets:
     - assets/
     - assets/images/
+  fonts:
+    - family: LeagueSpartan
+      fonts:
+        - asset: fonts/LeagueSpartan-Bold.otf
+    - family: Prompt
+      fonts:
+        - asset: fonts/Prompt-Regular.ttf

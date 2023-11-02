@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio/common/ui/custom_theme_data.dart';
 import 'package:portfolio/feature/landing/pages_descriptor.dart';
 
 import '../feature/home/bloc/home_page_bloc.dart';
@@ -31,14 +32,7 @@ class LaunchApp extends StatelessWidget {
             PointerDeviceKind.unknown
           },
         ),
-        theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSwatch().copyWith(
-            primary: Constants.colors.primary,
-            secondary: Constants.colors.secondary,
-            tertiary: Constants.colors.tertiary,
-          ),
-        ),
+        theme: CustomThemeData.defaultTheme,
         home: const LandingPage(),
       ),
     );

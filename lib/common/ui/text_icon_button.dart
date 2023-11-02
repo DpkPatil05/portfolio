@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
-import 'custom_styles.dart';
+import 'custom_theme_data.dart';
 
-class IconTextButton extends StatelessWidget {
-  const IconTextButton({
+class TextIconButton extends StatelessWidget {
+  const TextIconButton({
     super.key,
     required this.icon,
     required this.text,
@@ -29,8 +29,8 @@ class IconTextButton extends StatelessWidget {
           Text(
             text,
             style: isActive ?? false
-                ? CustomStyles.defaultHeaderStyle()
-                : CustomStyles.defaultTextStyle(),
+                ? CustomThemeData.defaultHeaderStyle()
+                : CustomThemeData.defaultTextStyle(),
           ),
         ],
       ),
