@@ -30,7 +30,7 @@ class _LandingPageState extends State<LandingPage> {
         backgroundColor: Constants.colors.primary,
         body: CustomScrollView(
           slivers: <Widget>[
-            const CustomAppBar(),
+            CustomAppBar(bloc: bloc),
             LandingPageBody(bloc: bloc),
           ],
         ),

@@ -48,28 +48,33 @@ class _LandingPageBodyState extends State<LandingPageBody> {
         ],
       );
 
-  Widget _buildPageIndicators(Pages page) => Padding(
-        padding: EdgeInsets.only(left: Constants.numbers.space50),
-        child: Align(
-          alignment: Alignment.centerLeft,
-          child: AnimatedSmoothIndicator(
-            axisDirection: Axis.vertical,
-            activeIndex: page.index,
-            count: Pages.values.length,
-            effect: WormEffect(
-              activeDotColor: Constants.colors.secondary,
-              dotColor: Constants.colors.tertiary,
-              dotHeight: Constants.numbers.space16,
-              dotWidth: Constants.numbers.space16,
-              spacing: Constants.numbers.space20,
-              strokeWidth: Constants.numbers.space2,
-              paintStyle: PaintingStyle.stroke,
-            ),
-            onDotClicked: (int index) {
-              widget.bloc.onPageChange(Pages.values[index]);
-              _liquidController.animateToPage(page: index);
-            },
+  Widget _buildPageIndicators(Pages currentActiveItem) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _liquidController.animateToPage(page: currentActiveItem.index);
+    });
+    return Padding(
+      padding: EdgeInsets.only(left: Constants.numbers.space50),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: AnimatedSmoothIndicator(
+          axisDirection: Axis.vertical,
+          activeIndex: currentActiveItem.index,
+          count: Pages.values.length,
+          effect: WormEffect(
+            activeDotColor: Constants.colors.secondary,
+            dotColor: Constants.colors.tertiary,
+            dotHeight: Constants.numbers.space16,
+            dotWidth: Constants.numbers.space16,
+            spacing: Constants.numbers.space20,
+            strokeWidth: Constants.numbers.space2,
+            paintStyle: PaintingStyle.stroke,
           ),
+          onDotClicked: (int index) {
+            widget.bloc.onPageChange(Pages.values[index]);
+            _liquidController.animateToPage(page: index);
+          },
         ),
-      );
+      ),
+    );
+  }
 }

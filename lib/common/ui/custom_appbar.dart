@@ -8,12 +8,11 @@ import '../../feature/landing/pages_descriptor.dart';
 import '../constants.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
+  const CustomAppBar({Key? key, required this.bloc}) : super(key: key);
+  final LandingPageBloc bloc;
 
   @override
   Widget build(BuildContext context) {
-    final LandingPageBloc bloc =
-        BlocProvider.of<LandingPageBloc>(context, listen: false);
     return BlocBuilder<LandingPageBloc, Pages>(
       builder: (context, page) => SliverAppBar(
         pinned: true,
