@@ -49,7 +49,7 @@ class CustomThemeData {
         letterSpacing: Constants.numbers.space8,
         shadows: [
           Shadow(
-            color: Constants.colors.primary,
+            color: Constants.colors.deepBlack,
             offset: Offset(
               -Constants.numbers.space4,
               -Constants.numbers.space1,

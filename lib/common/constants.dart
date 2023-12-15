@@ -76,4 +76,5 @@ class ColorConstants {
   final Color backgroundColor = const Color(0xff181db8);
   final Color lightText = const Color(0xffffffff);
   final Color darkText = const Color(0xff0f0e0e);
+  final Color deepBlack = const Color(0xff000000);
 }
